@@ -10,6 +10,7 @@ mean = round(df['Y2015'].mean(), 3)
 std = round(df['Y2015'].std(), 3)
 
 #What is the total number and percentage of missing data in 2016 to 2 decimal places?
+missing_value = df.isnull().sum()
 percent_missing = df.isnull().sum() * 100 / len(df)
 
 #Which year had the highest correlation with ‘Element Code’?
