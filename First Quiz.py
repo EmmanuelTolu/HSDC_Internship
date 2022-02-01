@@ -18,7 +18,7 @@ c = df.corr()
 c['Element Code'].nlargest(2)
 
 #What year has the highest sum of Import Quantity?
-IQ = df.groupby('Element')['Y2017'].agg(['sum','count'])
+IQ = df.groupby('Element')['Y2018','Y2017','Y2016','Y2015','Y2014'].agg(['sum','count'])
 
 #What is the total number of the sum of Production in 2014?
 SoP = df.groupby('Element')['Y2014'].agg(['sum', 'count'])
@@ -32,7 +32,6 @@ Ls = df.groupby('Element')['Y2018'].agg(['sum', 'count'])
 #What is the total Import Quantity in Algeria in 2018?
 fg = df[df["Area"].str.contains("Algeria")==True]
 mi = fg.groupby('Element')['Y2018'].agg(['sum','count'])
-mi['sum'].min()
 
 #What is the total number of unique countries in the dataset?
 df['Area'].nunique()
